@@ -5,11 +5,11 @@
   "homepage": "https://KarthikeyaRavirala.github.io/Portfolio-Advanced",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NODE_ENV=production npx next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "export": "next export",
-    "deploy": "rm -rf out && next build && npx gh-pages -d out -t true -r https://github.com/KarthikeyaRavirala/Portfolio-Advanced.git -b gh-pages"
+    "deploy": "rm -rf out && NODE_ENV=production npx next build --webpack && npx gh-pages -d out -t true -r https://github.com/KarthikeyaRavirala/Portfolio-Advanced.git -b gh-pages"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/Portfolio-Advanced' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/Portfolio-Advanced/' : '',
   trailingSlash: true,
-  output: 'export', // Changed for Next.js 16 static export
+  output: 'export', // Enables static exports for GitHub Pages
   images: {
     unoptimized: true, // Required for GitHub Pages since we can't use next/image with export
   },
@@ -20,8 +20,10 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
-  // Enable Turbopack for better performance
-  turbopack: {},
+  // Explicitly disable turbopack to work with custom webpack config for static export
+  // This is required for GitHub Pages deployment
+  // Setting empty turbopack config to satisfy Next.js 16 requirements
+  // turbopack: {}
 };
 
 export default nextConfig;
