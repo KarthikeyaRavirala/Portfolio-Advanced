@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/Portfolio-Advanced' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/Portfolio-Advanced/' : '',
   trailingSlash: true,
+  output: 'export', // Changed for Next.js 16 static export
   images: {
     unoptimized: true, // Required for GitHub Pages since we can't use next/image with export
   },
