@@ -5,12 +5,6 @@ import { motion } from 'framer-motion';
 import { FiUpload, FiSend, FiRefreshCw, FiFileText, FiMessageSquare, FiUser, FiCheckCircle } from 'react-icons/fi';
 
 const AiLab = () => {
-  const [isMounted, setIsMounted] = React.useState(false);
-  
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
-  
   const [activeTab, setActiveTab] = useState<'resume' | 'chatbot'>('resume');
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [resumeAnalysis, setResumeAnalysis] = useState<any>(null);
@@ -377,7 +371,7 @@ const AiLab = () => {
                   <form onSubmit={handleChatSubmit} className="flex gap-3">
                     <input
                       type="text"
-                      value={isMounted ? chatInput : ''}
+                      value={chatInput}
                       onChange={(e) => setChatInput(e.target.value)}
                       placeholder="Ask about projects, skills, or experience..."
                       className="flex-1 bg-[#3F4E4F] text-[#F0F4F8] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#A5C8D6]"
