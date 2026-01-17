@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // GitHub Pages requires basePath to be set for project name
-  basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/Portfolio-Advanced' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Portfolio-Advanced/' : '',
   trailingSlash: true,
   images: {
     unoptimized: true, // Required for GitHub Pages since we can't use next/image with export

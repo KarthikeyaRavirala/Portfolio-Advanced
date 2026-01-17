@@ -2,14 +2,14 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KarthikeyaRavirala.github.io/portfolio",
+  "homepage": "https://KarthikeyaRavirala.github.io/Portfolio-Advanced",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "export": "next export",
-    "deploy": "rm -rf out && next build && next export && npx gh-pages -d out -t true"
+    "deploy": "rm -rf out && next build && next export && npx gh-pages -d out -t true -r https://github.com/KarthikeyaRavirala/Portfolio-Advanced.git -b gh-pages"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
