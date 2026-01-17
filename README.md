@@ -111,25 +111,40 @@ The application is production-ready and can be deployed on:
 - Netlify
 - GitHub Pages
 
+### Deploying to Vercel (Recommended)
+
+Vercel is the easiest option for Next.js projects:
+
+1. Go to [vercel.com](https://vercel.com) and sign up/in with your GitHub account
+2. Click "New Project" and select your GitHub repository
+3. Vercel will automatically detect it's a Next.js project
+4. Add any environment variables if needed for your AI features
+5. Click "Deploy" and your site will be live within minutes
+
+### Deploying to Netlify
+
+1. Go to [netlify.com](https://netlify.com) and sign up/in
+2. Click "Add new site" and select "Deploy with GitHub"
+3. Choose your repository
+4. Set build command to `npm run build` and publish directory to `out`
+5. Deploy site
+
 ### Deploying to GitHub Pages
 
-GitHub Pages deployment can be done in two ways:
+GitHub Pages deployment requires additional configuration:
 
-#### Option 1: Using GitHub Actions (Recommended)
-1. The workflow file `.github/workflows/deploy.yml` is already configured
-2. When you push to the `main` branch, it will automatically deploy to GitHub Pages
-3. Make sure GitHub Pages is enabled in your repository settings
+1. Install the gh-pages package: `npm install --save-dev gh-pages`
+2. Add these scripts to your `package.json`:
 
-#### Option 2: Manual Deployment
-1. Make sure your project is connected to a GitHub repository
-2. Update the `homepage` field in `package.json` to point to your GitHub Pages URL
-3. Run the deploy command:
-
-```bash
-npm run deploy
+```json
+{
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
+  }
+}
 ```
-
-This will build your project and push the static files to the `gh-pages` branch, which GitHub Pages will use to serve your site.
+3. Run `npm run deploy` to build and deploy your site
 
 ## 🔮 Future Enhancements
 
