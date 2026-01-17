@@ -1,27 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #1B2631; /* Deep blue-gray */
+  --foreground: #F0F4F8; /* Light blue-gray */
+  --card: #3F4E4F; /* Medium blue-gray */
+  --card-foreground: #F0F4F8; /* Light blue-gray */
+  --primary: #A5C8D6; /* Light blue */
+  --primary-foreground: #1B2631; /* Deep blue-gray */
+  --secondary: #D9E4E0; /* Soft blue-green */
+  --secondary-foreground: #1B2631; /* Deep blue-gray */
+  --accent: #A5C8D6; /* Light blue */
+  --accent-foreground: #1B2631; /* Deep blue-gray */
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #A5C8D6; /* Light blue */
+  --input: #3F4E4F; /* Medium blue-gray */
+  --ring: #A5C8D6; /* Light blue */
+  --radius: 0.5rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Josefin Sans', sans-serif;
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ffffff;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: Geist, 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: Geist, 'Geist Fallback', monospace;
 }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom styles for advanced portfolio */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #A5C8D6, #D9E4E0, #F0F4F8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1B2631;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A5C8D6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D9E4E0;
 }
